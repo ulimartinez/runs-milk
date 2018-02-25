@@ -14,6 +14,7 @@ class Magazine(Resource):
         result_all = db.detected
         x = result_all.find().sort([("datetime", pymongo.DESCENDING)])
         results["x"] = x[0]["x"]
+        results["y"] = x[0]["y"]
         return results
 
 
