@@ -10,9 +10,11 @@ db = server.container
 
 class Magazine(Resource):
     def get(self):
+        results = {}
         result_all = db.detected
         x = result_all.find()
-        return x
+        for d in x:
+            return d
 
 
 api.add_resource(Magazine, '/', '/updatedmag')
