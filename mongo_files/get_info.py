@@ -18,6 +18,6 @@ detected = db.detected
 #post_with_id = detected.insert_one(post).inserted_id
 
 result_all = db.detected
-x = result_all.find()
+x = result_all.find().sort({"datetime": -1})
 for d in x:
     pprint(d)
