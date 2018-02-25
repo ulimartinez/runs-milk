@@ -13,8 +13,9 @@ from picamera import PiCamera
 from picamera.array import PiRGBArray
 
 
-def readQR(stream):
-    pil = Image.open(stream)
+def readQR(frame):
+    cv2_im = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+    pil = Image.fromarray(cv2_im)
     scanner = zbar.ImageScanner()
     pil = pil.convert('L')
     width, height = pil.size
