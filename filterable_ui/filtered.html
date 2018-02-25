@@ -56,13 +56,16 @@
 
       <div class="row center-align" id="main_container">
         <div class="row center-align" id="main_container">
-      <div class="col s3"><div class="row"><a id="Magazine0" class="waves-effect waves-light btn">0</a></div><div class="row"><a id="Magazine1" class="waves-effect waves-light btn">1</a></div><div class="row"><a id="Magazine2" class="waves-effect waves-light btn">2</a></div><div class="row"><a id="Magazine3" class="waves-effect waves-light btn">3</a></div><div class="row"><a id="Magazine4" class="waves-effect waves-light btn">4</a></div><div class="row"><a id="Magazine5" class="waves-effect waves-light btn">5</a></div></div><div class="col s3"><div class="row"><a id="Magazine6" class="waves-effect waves-light btn">0</a></div><div class="row"><a id="Magazine7" class="waves-effect waves-light btn">1</a></div><div class="row"><a id="Magazine8" class="waves-effect waves-light btn">2</a></div><div class="row"><a id="Magazine9" class="waves-effect waves-light btn">3</a></div><div class="row"><a id="Magazine10" class="waves-effect waves-light btn">4</a></div><div class="row"><a id="Magazine11" class="waves-effect waves-light btn">5</a></div></div><div class="col s3"><div class="row"><a id="Magazine12" class="waves-effect waves-light btn">0</a></div><div class="row"><a id="Magazine13" class="waves-effect waves-light btn">1</a></div><div class="row"><a id="Magazine14" class="waves-effect waves-light btn">2</a></div><div class="row"><a id="Magazine15" class="waves-effect waves-light btn">3</a></div><div class="row"><a id="Magazine16" class="waves-effect waves-light btn">4</a></div><div class="row"><a id="Magazine17" class="waves-effect waves-light btn">5</a></div></div><div class="col s3"><div class="row"><a id="Magazine18" class="waves-effect waves-light btn">0</a></div><div class="row"><a id="Magazine19" class="waves-effect waves-light btn">1</a></div><div class="row"><a id="Magazine20" class="waves-effect waves-light btn">2</a></div><div class="row"><a id="Magazine21" class="waves-effect waves-light btn">3</a></div><div class="row"><a id="Magazine22" class="waves-effect waves-light btn">4</a></div><div class="row"><a id="Magazine23" class="waves-effect waves-light btn">5</a></div></div></div>
+      <div class="col s3"><div class="row"><a id="Magazine0" class="waves-effect waves-light btn">0</a></div><div class="row"><a id="Magazine1" class="waves-effect waves-light btn">1</a></div><div class="row"><a id="Magazine2" class="waves-effect waves-light btn">2</a></div><div class="row"><a id="Magazine3" class="waves-effect waves-light btn">3</a></div><div class="row"><a id="Magazine4" class="waves-effect waves-light btn">4</a></div><div class="row"><a id="Magazine5" class="waves-effect waves-light btn">5</a></div><p>Rail 1</p></div>
+      <div class="col s3"><div class="row"><a id="Magazine6" class="waves-effect waves-light btn">0</a></div><div class="row"><a id="Magazine7" class="waves-effect waves-light btn">1</a></div><div class="row"><a id="Magazine8" class="waves-effect waves-light btn">2</a></div><div class="row"><a id="Magazine9" class="waves-effect waves-light btn">3</a></div><div class="row"><a id="Magazine10" class="waves-effect waves-light btn">4</a></div><div class="row"><a id="Magazine11" class="waves-effect waves-light btn">5</a></div><p>Rail 2</p></div>
+      <div class="col s3"><div class="row"><a id="Magazine12" class="waves-effect waves-light btn">0</a></div><div class="row"><a id="Magazine13" class="waves-effect waves-light btn">1</a></div><div class="row"><a id="Magazine14" class="waves-effect waves-light btn">2</a></div><div class="row"><a id="Magazine15" class="waves-effect waves-light btn">3</a></div><div class="row"><a id="Magazine16" class="waves-effect waves-light btn">4</a></div><div class="row"><a id="Magazine17" class="waves-effect waves-light btn">5</a></div><p>Rail 3</p></div>
+      <div class="col s3"><div class="row"><a id="Magazine18" class="waves-effect waves-light btn">0</a></div><div class="row"><a id="Magazine19" class="waves-effect waves-light btn">1</a></div><div class="row"><a id="Magazine20" class="waves-effect waves-light btn">2</a></div><div class="row"><a id="Magazine21" class="waves-effect waves-light btn">3</a></div><div class="row"><a id="Magazine22" class="waves-effect waves-light btn">4</a></div><div class="row"><a id="Magazine23" class="waves-effect waves-light btn">5</a></div><p>Rail 4</p></div></div>
       </div>
 
       <div class="row">
         <div class="col s12">
-          <h4 class="center-align">Production Line 1</h4>
-          <h4 class="center-align">Planta #*dropdown*</h4>
+          <h4 class="center-align">Production Line 5</h4>
+          <h4 class="center-align">Planta #1</h4>
         </div>
       </div>
 
@@ -113,38 +116,11 @@
 <script>
 $(document).ready(function(){
   elem = "";
-  $("a").click(function(){
-    //console.log(this);
-  });
-
-  //console.log($("#Magazine0").text());
-  //console.log($("#Magazine0").html());
-  //$("#Magazine0").css("color","red");
-
-/*
-  var iterator = 0;
-  for(var i = 0; i < 4; i++){
-    var col = document.createElement('div');
-    col.className = "col s3";
-    for(var j = 0; j < 6; j++){
-      var row = document.createElement('div');
-      row.className = "row";
-      var button = document.createElement('a');
-      button.innerHTML = j;
-      button.id = "Magazine " + iterator;
-      button.className = "waves-effect waves-light btn";
-      row.appendChild(button);
-      col.appendChild(row);
-      iterator++;
-    }
-    var newcontent = document.getElementById('mai_container');
-    newcontent.appendChild(col);
-  }*/
 
   $(function() {
     var data = [];
     data["None/Clear"] = null;
-    data["Multiple"] = null;
+    //data["Multiple"] = null;
     for(var i = 0; i < 24; i++){
       data["Magazine"+i] = null;
     }
