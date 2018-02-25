@@ -11,6 +11,8 @@ class Magazine(Resource):
         result_all = db.detected
         x = result_all.find().sort({"datetime": -1})
         return x
-api.add_resource(Magazine, '/updatedmag')
+
+
+api.add_resource(Magazine, '/', '/updatedmag')
 if __name__ == "__main__":
-    app.run(port=80)
+    app.run()
