@@ -6,10 +6,12 @@ api = Api(app)
 server = MongoClient("159.89.231.140")
 
 db = server.container
+
+
 class Magazine(Resource):
     def get(self):
         result_all = db.detected
-        x = result_all.find().sort({"datetime": -1})
+        x = result_all.find()
         return x
 
 
