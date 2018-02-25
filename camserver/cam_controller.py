@@ -35,12 +35,12 @@ def readQR(frame):
 
 def saveData(frame, x, x1, y, y1):
     qr_text = readQR(frame[y:y1, x:x1])
-    print(qr_text)
+    print("{} at coordinate {}, {}", qr_text, x, y)
 
 # construct the argument parser and parse the arguments
 ap = argparse.ArgumentParser()
 ap.add_argument("-v", "--video", help="path to the video file")
-ap.add_argument("-a", "--min-area", type=int, default=500, help="minimum area size")
+ap.add_argument("-a", "--min-area", type=int, default=5000, help="minimum area size")
 args = vars(ap.parse_args())
 
 # if the video argument is None, then we are reading from webcam
