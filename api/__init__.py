@@ -12,9 +12,9 @@ class Magazine(Resource):
     def get(self):
         results = {}
         result_all = db.detected
-        x = result_all.find()
-        for d in x:
-            return d["x"]
+        x = result_all.find().sort({"datetime":-1})
+        results["x"] = x["x"]
+        return results
 
 
 api.add_resource(Magazine, '/', '/updatedmag')
