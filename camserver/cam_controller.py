@@ -62,9 +62,9 @@ args = vars(ap.parse_args())
 # if the video argument is None, then we are reading from webcam
 if args.get("video", None) is None:
     camera = PiCamera()
-    camera.resolution = (640, 480)
+    camera.resolution = (1024, 768)
     camera.framerate = 30
-    rawCapture = PiRGBArray(camera, size=(640, 480))
+    rawCapture = PiRGBArray(camera, size=(1024, 768))
     time.sleep(0.25)
 
 # otherwise, we are reading from a video file
@@ -83,7 +83,7 @@ for image in camera.capture_continuous(rawCapture, format="bgr", use_video_port=
     rawCapture.truncate(0)
 
     # resize the frame, convert it to grayscale, and blur it
-    frame = imutils.resize(frame, width=500)
+    frame = imutils.resize(frame, width=800)
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     gray = cv2.GaussianBlur(gray, (21, 21), 0)
 
