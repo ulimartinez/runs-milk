@@ -11,7 +11,20 @@ import time
 import cv2
 from picamera import PiCamera
 from picamera.array import PiRGBArray
+from pymongo import MongoClient
+import datetime
 
+def insertAtDB(content,x,y):
+    server = MongoClient("159.89.231.140")
+    db = server.container
+    post = { "contains":content,
+             "x":x,
+             "y":y,
+             "datetime":datetime.datetime.utcnow()
+             }
+    detected = db.detected
+    post_with_id = detected.insert_one(post).inserted_id
+             
 
 def readQR(frame):
     cv2_im = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
@@ -37,6 +50,8 @@ def saveData(frame, x, x1, y, y1):
     qr_text = readQR(frame[y:y1, x:x1])
     if qr_text is not None:
         print('%s at coordinate %i, %i' % (qr_text, x, y))
+        insertAtDB(qr_text,x,y)
+        
 
 # construct the argument parser and parse the arguments
 ap = argparse.ArgumentParser()
