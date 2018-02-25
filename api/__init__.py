@@ -14,7 +14,7 @@ class Magazine(Resource):
         result_all = db.detected
         x = result_all.find()
         for d in x:
-            return d
+            return d["x"]
 
 
 api.add_resource(Magazine, '/', '/updatedmag')
