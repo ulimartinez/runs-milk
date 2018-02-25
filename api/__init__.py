@@ -12,7 +12,7 @@ class Magazine(Resource):
     def get(self):
         results = {}
         result_all = db.detected
-        x = result_all.find().sort([("borough", pymongo.DESCENDING)])
+        x = result_all.find().sort([("datetime", pymongo.DESCENDING)])
         results["x"] = x[0]["x"]
         return results
 
