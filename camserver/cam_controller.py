@@ -117,11 +117,7 @@ for image in camera.capture_continuous(rawCapture, format="bgr", use_video_port=
 
 
     # show the frame and record if the user presses a key
-    cv2.imshow("Security Feed", frame)
-    cv2.imshow("Thresh", thresh)
-    cv2.imshow("Frame Delta", frameDelta)
-    if changeFrame is not None:
-        cv2.imshow("change", changeFrame)
+    cv2.imshow("Live Magazine", frame)
     key = cv2.waitKey(1) & 0xFF
 
     # if the `q` key is pressed, break from the lop
