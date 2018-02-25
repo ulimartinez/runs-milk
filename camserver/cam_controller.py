@@ -49,8 +49,8 @@ def readQR(frame):
 def saveData(frame, x, x1, y, y1):
     qr_text = readQR(frame[y:y1, x:x1])
     if qr_text is not None:
-        print('%s at coordinate %i, %i' % (qr_text, x, y))
-        insertAtDB(qr_text,x,y)
+        print('%s at coordinate %i, %i' % (qr_text, (x+x1)/2, (y+y1)/2))
+        insertAtDB(qr_text,(x+x1)/2,(y+y1)/2)
         
 
 # construct the argument parser and parse the arguments
