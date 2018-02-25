@@ -56,7 +56,8 @@ def saveData(frame, x, x1, y, y1):
 # construct the argument parser and parse the arguments
 ap = argparse.ArgumentParser()
 ap.add_argument("-v", "--video", help="path to the video file")
-ap.add_argument("-a", "--min-area", type=int, default=5000, help="minimum area size")
+ap.add_argument("-a", "--min-area", type=int, default=4000, help="minimum area size")
+ap.add_argument("-m", "--max-area", type=int, default=7000, help="maximum area size")
 args = vars(ap.parse_args())
 
 # if the video argument is None, then we are reading from webcam
@@ -106,7 +107,7 @@ for image in camera.capture_continuous(rawCapture, format="bgr", use_video_port=
     # loop over the contours
     for c in cnts:
         # if the contour is too small, ignore it
-        if cv2.contourArea(c) < args["min_area"]:
+        if args["min_area"] > cv2.contourArea(c) > args["max_area"]:
             continue
 
         # compute the bounding box for the contour, draw it on the frame,
